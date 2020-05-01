@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/glx-d
+glx-d.so
+glx-d.dylib
+glx-d.dll
+glx-d.a
+glx-d.lib
+glx-d-test-*
+*.exe
+*.o
+*.obj
+*.lst
+dub.selections.json

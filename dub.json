@@ -1,0 +1,14 @@
+{
+	"authors": [
+		"Grim Maple"
+	],
+	"copyright": "Copyright © 2020, Grim Maple",
+	"description": "GLX bindings for D Programming Language.",
+	"license": "MIT",
+	"name": "glx-d",
+	"targetType": "sourceLibrary",
+	"dependencies": {
+		"x11": "~>1.0.21",
+		"opengl:gl2-static": "~>1.0.0"
+	}
+}
