@@ -7,7 +7,7 @@ private import opengl.gl2;
 
 private import glxint;
 
-extern(C) nothrow:
+extern(C):
 
 version = GLX_VERSION_1_1;
 version = GLX_VERSION_1_2;

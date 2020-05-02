@@ -1,4 +1,4 @@
-module source.glx.glxext;
+module glx.glxext;
 
 import core.stdc.config;
 
