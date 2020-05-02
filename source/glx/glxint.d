@@ -1,5 +1,8 @@
 module glx.glxint;
 
+version(linux):
+extern(C):
+
 private import x11.X;
 private import opengl.gl2;
 

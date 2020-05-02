@@ -1,5 +1,7 @@
 module glx.glxmd;
 
+version(linux):
+extern(C):
 /*
 ** Machine dependent declarations.
 */

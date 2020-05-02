@@ -1,13 +1,14 @@
 module glx.glx;
 
+version(linux):
+extern(C):
+
 private import x11.X;
 private import x11.Xlib;
 private import x11.Xutil;
 private import opengl.gl2;
 
 private import glx.glxint;
-
-extern(C):
 
 version = GLX_VERSION_1_1;
 version = GLX_VERSION_1_2;
