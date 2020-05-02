@@ -4,6 +4,14 @@ import core.stdc.config;
 
 // This file is generated using dstep
 
+private import x11.X;
+private import x11.Xlib;
+private import x11.Xutil;
+
+private import glx.glx;
+
+private import opengl.gl2;
+
 extern (C):
 
 enum __glx_glxext_h_ = 1;
@@ -64,7 +72,7 @@ enum GLX_CONTEXT_FORWARD_COMPATIBLE_BIT_ARB = 0x00000002;
 enum GLX_CONTEXT_MAJOR_VERSION_ARB = 0x2091;
 enum GLX_CONTEXT_MINOR_VERSION_ARB = 0x2092;
 enum GLX_CONTEXT_FLAGS_ARB = 0x2094;
-alias PFNGLXCREATECONTEXTATTRIBSARBPROC = __GLXcontextRec* function (Display* dpy, GLXFBConfig config, GLXContext share_context, int direct, const(int)* attrib_list);
+alias PFNGLXCREATECONTEXTATTRIBSARBPROC = GLXContext function (Display* dpy, GLXFBConfig config, GLXContext share_context, int direct, const(int)* attrib_list);
 
 /* GLX_ARB_create_context */
 
@@ -131,11 +139,11 @@ enum GLX_GPU_NUM_SPI_AMD = 0x21A8;
 alias PFNGLXGETGPUIDSAMDPROC = uint function (uint maxCount, uint* ids);
 alias PFNGLXGETGPUINFOAMDPROC = int function (uint id, int property, GLenum dataType, uint size, void* data);
 alias PFNGLXGETCONTEXTGPUIDAMDPROC = uint function (GLXContext ctx);
-alias PFNGLXCREATEASSOCIATEDCONTEXTAMDPROC = __GLXcontextRec* function (uint id, GLXContext share_list);
-alias PFNGLXCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC = __GLXcontextRec* function (uint id, GLXContext share_context, const(int)* attribList);
+alias PFNGLXCREATEASSOCIATEDCONTEXTAMDPROC = GLXContext function (uint id, GLXContext share_list);
+alias PFNGLXCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC = GLXContext function (uint id, GLXContext share_context, const(int)* attribList);
 alias PFNGLXDELETEASSOCIATEDCONTEXTAMDPROC = int function (GLXContext ctx);
 alias PFNGLXMAKEASSOCIATEDCONTEXTCURRENTAMDPROC = int function (GLXContext ctx);
-alias PFNGLXGETCURRENTASSOCIATEDCONTEXTAMDPROC = __GLXcontextRec* function ();
+alias PFNGLXGETCURRENTASSOCIATEDCONTEXTAMDPROC = GLXContext function ();
 alias PFNGLXBLITCONTEXTFRAMEBUFFERAMDPROC = void function (GLXContext dstCtx, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
 
 /* GLX_AMD_gpu_association */
@@ -168,7 +176,7 @@ enum GLX_SCREEN_EXT = 0x800C;
 alias PFNGLXGETCURRENTDISPLAYEXTPROC = _XDisplay* function ();
 alias PFNGLXQUERYCONTEXTINFOEXTPROC = int function (Display* dpy, GLXContext context, int attribute, int* value);
 alias PFNGLXGETCONTEXTIDEXTPROC = c_ulong function (const GLXContext context);
-alias PFNGLXIMPORTCONTEXTEXTPROC = __GLXcontextRec* function (Display* dpy, GLXContextID contextID);
+alias PFNGLXIMPORTCONTEXTEXTPROC = GLXContext function (Display* dpy, GLXContextID contextID);
 alias PFNGLXFREECONTEXTEXTPROC = void function (Display* dpy, GLXContext context);
 
 /* GLX_EXT_import_context */
@@ -472,8 +480,8 @@ enum GLX_COLOR_INDEX_TYPE_SGIX = 0x8015;
 alias PFNGLXGETFBCONFIGATTRIBSGIXPROC = int function (Display* dpy, GLXFBConfigSGIX config, int attribute, int* value);
 alias PFNGLXCHOOSEFBCONFIGSGIXPROC = __GLXFBConfigRec** function (Display* dpy, int screen, int* attrib_list, int* nelements);
 alias PFNGLXCREATEGLXPIXMAPWITHCONFIGSGIXPROC = c_ulong function (Display* dpy, GLXFBConfigSGIX config, Pixmap pixmap);
-alias PFNGLXCREATECONTEXTWITHCONFIGSGIXPROC = __GLXcontextRec* function (Display* dpy, GLXFBConfigSGIX config, int render_type, GLXContext share_list, int direct);
-alias PFNGLXGETVISUALFROMFBCONFIGSGIXPROC = _Anonymous_0* function (Display* dpy, GLXFBConfigSGIX config);
+alias PFNGLXCREATECONTEXTWITHCONFIGSGIXPROC = GLXContext function (Display* dpy, GLXFBConfigSGIX config, int render_type, GLXContext share_list, int direct);
+alias PFNGLXGETVISUALFROMFBCONFIGSGIXPROC = void* function (Display* dpy, GLXFBConfigSGIX config); // TODO: shall be _Anonymous_0
 alias PFNGLXGETFBCONFIGFROMVISUALSGIXPROC = __GLXFBConfigRec* function (Display* dpy, XVisualInfo* vis);
 
 /* GLX_SGIX_fbconfig */

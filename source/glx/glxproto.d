@@ -2,6 +2,10 @@ module glx.glxproto;
 
 // This file is generated using dstep
 
+private import x11.Xmd;
+private import glx.glx;
+private import glx.glxmd;
+
 extern (C):
 
 /*

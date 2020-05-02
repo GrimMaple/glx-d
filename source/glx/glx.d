@@ -5,7 +5,7 @@ private import x11.Xlib;
 private import x11.Xutil;
 private import opengl.gl2;
 
-private import glxint;
+private import glx.glxint;
 
 extern(C):
 
