@@ -7,4 +7,6 @@ Mostly generated using `dstep`, but manually adjusted to compile and work
 # Usage
 
 This package depends on `x11` and `opengl:gl2-static`.  
-Make sure to link agains `GLX` and `GL` manually in your `dub.json`/`dub.sdl`
+Make sure to link agains `GLX` and `GL` manually in your `dub.json`/`dub.sdl`  
+  
+To use the lubrary, `import glx.glx;`. All the files are in corresponding modules.
