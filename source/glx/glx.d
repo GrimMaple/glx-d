@@ -1,4 +1,4 @@
-module glx;
+module glx.glx;
 
 private import x11.X;
 private import x11.Xlib;
