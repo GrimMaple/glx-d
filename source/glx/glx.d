@@ -3,12 +3,11 @@ module glx.glx;
 version(linux):
 extern(C):
 
-private import x11.X;
-private import x11.Xlib;
-private import x11.Xutil;
-private import opengl.gl2;
+import x11.X;
+import x11.Xlib;
+import x11.Xutil;
 
-private import glx.glxint;
+import glx.glxint;
 
 version = GLX_VERSION_1_1;
 version = GLX_VERSION_1_2;
@@ -16,6 +15,23 @@ version = GLX_VERSION_1_3;
 version = GLX_VERSION_1_4;
 
 immutable string GLX_EXTENSION_NAME = "GLX";
+
+// Missing OpenGL definitions, to not bring up extra dependencies...
+package
+{
+    alias GLint = int;
+    alias GLuint = uint;
+    alias GLvoid = void;
+    alias GLdouble = double;
+    alias GLboolean = int;
+	alias GLfloat = float;
+	alias GLubyte = ubyte;
+	alias GLsizei = int;
+	alias GLenum = uint;
+	alias GLsizeiptr = ptrdiff_t;
+	alias GLintptr = ptrdiff_t;
+	alias GLbitfield = uint;
+}
 
 /*
  * Error codes returned by glXGetConfig:

@@ -7,13 +7,11 @@ import core.stdc.config;
 version(linux):
 extern (C):
 
-private import x11.X;
-private import x11.Xlib;
-private import x11.Xutil;
+import x11.X;
+import x11.Xlib;
+import x11.Xutil;
 
-private import glx.glx;
-
-private import opengl.gl2;
+import glx.glx;
 
 enum __glx_glxext_h_ = 1;
 

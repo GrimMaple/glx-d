@@ -3,8 +3,8 @@ module glx.glxint;
 version(linux):
 extern(C):
 
-private import x11.X;
-private import opengl.gl2;
+import x11.X;
+import glx.glx;
 
 alias __GLXvisualConfig = __GLXvisualConfigRec;
 alias __GLXFBConfig = __GLXFBConfigRec;

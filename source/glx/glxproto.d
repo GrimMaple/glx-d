@@ -5,9 +5,9 @@ module glx.glxproto;
 version(linux):
 extern (C):
 
-private import x11.Xmd;
-private import glx.glx;
-private import glx.glxmd;
+import x11.Xmd;
+import glx.glx;
+import glx.glxmd;
 
 
 /*
